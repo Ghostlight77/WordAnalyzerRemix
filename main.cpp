@@ -63,14 +63,19 @@ int main()
 
 	cout << "Longest Word: " << longestWord << "\n\n";
 
+	map<string, int> word_counts;
+    	for (string word : words) {
+        	word_counts[word]++;
+    	}
+
 	//steep5
 	cout << "COUNT PER WORD: ";
-    for_each(word_counts.begin(), word_counts.end(), display);
-    cout << "\n\n";
+    	for_each(word_counts.begin(), word_counts.end(), display);
+    	cout << "\n\n";
 
 	//step6
 	int duplicate_count = count_if(word_counts.begin(), word_counts.end(), over_1);
-    cout << duplicate_count << " DUPLICATE WORDS\n\n";
+    	cout << duplicate_count << " DUPLICATE WORDS\n\n";
 
 	//ask the user for a word to search for
 	string searchWord = "";
